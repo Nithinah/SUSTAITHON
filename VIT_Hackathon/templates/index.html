@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress, Anxiety, and Depression Predictor</title>
+</head>
+<body>
+    <h1>Stress, Anxiety, and Depression Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender (0 = Female, 1 = Male):</label>
+        <input type="number" id="gender" name="gender" required><br><br>
+
+        <label for="university">University:</label>
+        <input type="number" id="university" name="university" required><br><br>
+
+        <label for="department">Department:</label>
+        <input type="number" id="department" name="department" required><br><br>
+
+        <label for="academic_year">Academic Year:</label>
+        <input type="number" id="academic_year" name="academic_year" required><br><br>
+
+        <label for="cgpa">Current CGPA:</label>
+        <input type="number" id="cgpa" name="cgpa" step="0.01" required><br><br>
+
+        <label for="scholarship">Scholarship/Waiver (0 or 1):</label>
+        <input type="number" id="scholarship" name="scholarship" required><br><br>
+
+        <!-- PSS Inputs -->
+        <h3>Perceived Stress Scale (PSS)</h3>
+        {% for i in range(1, 11) %}
+        <label for="PSS{{ i }}">PSS{{ i }}:</label>
+        <input type="number" id="PSS{{ i }}" name="PSS{{ i }}" required><br><br>
+        {% endfor %}
+
+        <!-- GAD Inputs -->
+        <h3>Generalized Anxiety Disorder (GAD)</h3>
+        {% for i in range(1, 8) %}
+        <label for="GAD{{ i }}">GAD{{ i }}:</label>
+        <input type="number" id="GAD{{ i }}" name="GAD{{ i }}" required><br><br>
+        {% endfor %}
+
+        <!-- PHQ Inputs -->
+        <h3>Patient Health Questionnaire (PHQ)</h3>
+        {% for i in range(1, 10) %}
+        <label for="PHQ{{ i }}">PHQ{{ i }}:</label>
+        <input type="number" id="PHQ{{ i }}" name="PHQ{{ i }}" required><br><br>
+        {% endfor %}
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
