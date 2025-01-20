@@ -19,3 +19,7 @@ Flask
 Scikit-learn
 Pandas
 Numpy
+
+# WORKFLOW DIAGRAM
+
+![mental_health (1)](https://github.com/user-attachments/assets/ec02513e-77be-4cea-9a96-875f719d8844)
